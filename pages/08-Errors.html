@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Isaac - The name &mdash; Isaac 1.0 documentation</title>
+  <title>Error Handling &mdash; Isaac 1.0 documentation</title>
   
 
   
@@ -29,8 +29,8 @@
 
   
     <link rel="top" title="Isaac 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="Future Plans" href="10-FuturePlans.html"/>
-        <link rel="prev" title="FAQ" href="08-FAQ.html"/> 
+        <link rel="next" title="FAQ" href="09-FAQ.html"/>
+        <link rel="prev" title="Thread Safety" href="07-ThreadSafety.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -79,27 +79,28 @@
 <li class="toctree-l2"><a class="reference internal" href="04-CopyModels.html#discussion">Discussion</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="05-Performance.html">Performance</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="05-Performance.html#discussion">Discussion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="05-Performance.html#production-code">Production Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="05-Performance.html#the-numbers">The Numbers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="05-Performance.html#thread-safety">Thread Safety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-APIDocs.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-Performance.html">Performance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="06-Performance.html#discussion">Discussion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06-Performance.html#production-code">Production Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06-Performance.html#the-numbers">The Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06-Performance.html#thread-safety">Thread Safety</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="06-ThreadSafety.html">Thread Safety</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07-Errors.html">Error Handling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08-FAQ.html">FAQ</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="08-FAQ.html#this-library-is-recursive-is-there-any-worry-of-infinite-loops">This library is recursive. Is there any worry of infinite loops?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="08-FAQ.html#my-json-contains-nested-arrays-an-array-with-an-array-inside-does-this-library-support-that">My JSON contains nested arrays (an array with an array inside). Does this library support that?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="08-FAQ.html#i-don-t-want-to-use-the-same-property-names-as-my-json-some-are-even-impossible-id-what-can-i-do">I don&#8217;t want to use the same property names as my JSON. Some are even impossible (id). What can I do?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-ThreadSafety.html">Thread Safety</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Error Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-FAQ.html">FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="09-FAQ.html#this-library-is-recursive-is-there-any-worry-of-infinite-loops">This library is recursive. Is there any worry of infinite loops?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09-FAQ.html#my-json-contains-nested-arrays-an-array-with-an-array-inside-does-this-library-support-that">My JSON contains nested arrays (an array with an array inside). Does this library support that?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09-FAQ.html#i-don-t-want-to-use-the-same-property-names-as-my-json-some-are-even-impossible-id-what-can-i-do">I don&#8217;t want to use the same property names as my JSON. Some are even impossible (id). What can I do?</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Isaac - The name</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#why-did-we-name-this-library-isaac">Why did we name this library Isaac?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-Name.html">Isaac - The name</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="10-Name.html#why-did-we-name-this-library-isaac">Why did we name this library Isaac?</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="10-FuturePlans.html">Future Plans</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="10-FuturePlans.html#code-generator">Code Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-FuturePlans.html">Future Plans</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="11-FuturePlans.html#code-generator">Code Generator</a></li>
 </ul>
 </li>
 </ul>
@@ -125,10 +126,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>Isaac - The name</li>
+    <li>Error Handling</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/pages/09-Name.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/pages/08-Errors.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -136,13 +137,13 @@
 </div>
           <div role="main">
             
-  <div class="section" id="isaac-the-name">
-<h1>Isaac - The name<a class="headerlink" href="#isaac-the-name" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="why-did-we-name-this-library-isaac">
-<h2>Why did we name this library Isaac?<a class="headerlink" href="#why-did-we-name-this-library-isaac" title="Permalink to this headline">¶</a></h2>
-<p>Originally, we wanted to name this library Alchemist. Alchemy is the process of turning lead into gold. For this library, we like the idea of turning messy, annoying-to-use NSDictionary objects into clean, golden model objects.</p>
-<p>However, it seemed the name was trademarked, so we needed to be more creative. When searching for famous alchemists, we decided to name the library after Isaac Newton (while not inventing calculus, he gave Alchemy a try). Really, the link to alchemy is pretty weak...so I&#8217;d just think of Isaac as your friendly, intelligent, curly-haired JSON parser.</p>
-</div>
+  <div class="section" id="error-handling">
+<h1>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this headline">¶</a></h1>
+<p>You may notice that none of the methods in this library take an NSError pointer as a parameter. Any errors are handled gracefully, usually by just nilling out the offending value. For instance, if the server sends down a key which is not contained in the model, it will not throw an error, it will just not set the value. This is useful because often this can be expected behavior when taking into account backwards compatibility.</p>
+<p>When writing code, you should not assume that any value is not nil, or that an array is filled unless you have confidence in the structure of the JSON you are passing in.</p>
+<p>If you are developing, and cannot work out why a certain class is not being populated correctly, you can turn the library onto verbose mode where it will print out any errors it encounters. To turn on verbose mode add</p>
+<p>ISAAC_VERBOSE=1</p>
+<p>as a preprocessor macro for your project.</p>
 </div>
 
 
@@ -151,10 +152,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="10-FuturePlans.html" class="btn btn-neutral float-right" title="Future Plans">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="09-FAQ.html" class="btn btn-neutral float-right" title="FAQ">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="08-FAQ.html" class="btn btn-neutral" title="FAQ"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="07-ThreadSafety.html" class="btn btn-neutral" title="Thread Safety"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

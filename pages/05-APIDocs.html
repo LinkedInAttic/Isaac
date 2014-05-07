@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Error Handling &mdash; Isaac 1.0 documentation</title>
+  <title>API Documentation &mdash; Isaac 1.0 documentation</title>
   
 
   
@@ -29,8 +29,8 @@
 
   
     <link rel="top" title="Isaac 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="FAQ" href="08-FAQ.html"/>
-        <link rel="prev" title="Thread Safety" href="06-ThreadSafety.html"/> 
+        <link rel="next" title="Performance" href="06-Performance.html"/>
+        <link rel="prev" title="Copying Models (or any object)" href="04-CopyModels.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -79,27 +79,28 @@
 <li class="toctree-l2"><a class="reference internal" href="04-CopyModels.html#discussion">Discussion</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="05-Performance.html">Performance</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="05-Performance.html#discussion">Discussion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="05-Performance.html#production-code">Production Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="05-Performance.html#the-numbers">The Numbers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="05-Performance.html#thread-safety">Thread Safety</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-Performance.html">Performance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="06-Performance.html#discussion">Discussion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06-Performance.html#production-code">Production Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06-Performance.html#the-numbers">The Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06-Performance.html#thread-safety">Thread Safety</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="06-ThreadSafety.html">Thread Safety</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Error Handling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="08-FAQ.html">FAQ</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="08-FAQ.html#this-library-is-recursive-is-there-any-worry-of-infinite-loops">This library is recursive. Is there any worry of infinite loops?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="08-FAQ.html#my-json-contains-nested-arrays-an-array-with-an-array-inside-does-this-library-support-that">My JSON contains nested arrays (an array with an array inside). Does this library support that?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="08-FAQ.html#i-don-t-want-to-use-the-same-property-names-as-my-json-some-are-even-impossible-id-what-can-i-do">I don&#8217;t want to use the same property names as my JSON. Some are even impossible (id). What can I do?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-ThreadSafety.html">Thread Safety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-Errors.html">Error Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-FAQ.html">FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="09-FAQ.html#this-library-is-recursive-is-there-any-worry-of-infinite-loops">This library is recursive. Is there any worry of infinite loops?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09-FAQ.html#my-json-contains-nested-arrays-an-array-with-an-array-inside-does-this-library-support-that">My JSON contains nested arrays (an array with an array inside). Does this library support that?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09-FAQ.html#i-don-t-want-to-use-the-same-property-names-as-my-json-some-are-even-impossible-id-what-can-i-do">I don&#8217;t want to use the same property names as my JSON. Some are even impossible (id). What can I do?</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="09-Name.html">Isaac - The name</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="09-Name.html#why-did-we-name-this-library-isaac">Why did we name this library Isaac?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-Name.html">Isaac - The name</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="10-Name.html#why-did-we-name-this-library-isaac">Why did we name this library Isaac?</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="10-FuturePlans.html">Future Plans</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="10-FuturePlans.html#code-generator">Code Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-FuturePlans.html">Future Plans</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="11-FuturePlans.html#code-generator">Code Generator</a></li>
 </ul>
 </li>
 </ul>
@@ -125,10 +126,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>Error Handling</li>
+    <li>API Documentation</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/pages/07-Errors.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/pages/05-APIDocs.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -136,13 +137,11 @@
 </div>
           <div role="main">
             
-  <div class="section" id="error-handling">
-<h1>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this headline">¶</a></h1>
-<p>You may notice that none of the methods in this library take an NSError pointer as a parameter. Any errors are handled gracefully, usually by just nilling out the offending value. For instance, if the server sends down a key which is not contained in the model, it will not throw an error, it will just not set the value. This is useful because often this can be expected behavior when taking into account backwards compatibility.</p>
-<p>When writing code, you should not assume that any value is not nil, or that an array is filled unless you have confidence in the structure of the JSON you are passing in.</p>
-<p>If you are developing, and cannot work out why a certain class is not being populated correctly, you can turn the library onto verbose mode where it will print out any errors it encounters. To turn on verbose mode add</p>
-<p>ISAAC_VERBOSE=1</p>
-<p>as a preprocessor macro for your project.</p>
+  <div class="section" id="api-documentation">
+<h1>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h1>
+<p>To see our full API documentation, go to:</p>
+<p><a class="reference external" href="http://linkedin.github.io/Isaac/api-docs/">http://linkedin.github.io/Isaac/api-docs/</a></p>
+<p>This documentation is generated automatically from the source code. It is generated using appledoc <a class="reference external" href="http://gentlebytes.com/appledoc/">http://gentlebytes.com/appledoc/</a> (by GentleBytes).</p>
 </div>
 
 
@@ -151,10 +150,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="08-FAQ.html" class="btn btn-neutral float-right" title="FAQ">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="06-Performance.html" class="btn btn-neutral float-right" title="Performance">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="06-ThreadSafety.html" class="btn btn-neutral" title="Thread Safety"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="04-CopyModels.html" class="btn btn-neutral" title="Copying Models (or any object)"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

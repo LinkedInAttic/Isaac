@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>JSON to Models &mdash; Isaac 1.0 documentation</title>
+  <title>Isaac - The name &mdash; Isaac 1.0 documentation</title>
   
 
   
@@ -29,8 +29,8 @@
 
   
     <link rel="top" title="Isaac 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="Models to JSON" href="03-ModelsToJSON.html"/>
-        <link rel="prev" title="Installation" href="01-Install.html"/> 
+        <link rel="next" title="Future Plans" href="11-FuturePlans.html"/>
+        <link rel="prev" title="FAQ" href="09-FAQ.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -63,9 +63,9 @@
 <li class="toctree-l2"><a class="reference internal" href="01-Install.html#source">Source</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">JSON to Models</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#basic-example">Basic Example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#other-methods">Other Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-JSONToModels.html">JSON to Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02-JSONToModels.html#basic-example">Basic Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-JSONToModels.html#other-methods">Other Methods</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="03-ModelsToJSON.html">Models to JSON</a><ul>
@@ -95,8 +95,8 @@
 <li class="toctree-l2"><a class="reference internal" href="09-FAQ.html#i-don-t-want-to-use-the-same-property-names-as-my-json-some-are-even-impossible-id-what-can-i-do">I don&#8217;t want to use the same property names as my JSON. Some are even impossible (id). What can I do?</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="10-Name.html">Isaac - The name</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="10-Name.html#why-did-we-name-this-library-isaac">Why did we name this library Isaac?</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Isaac - The name</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#why-did-we-name-this-library-isaac">Why did we name this library Isaac?</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="11-FuturePlans.html">Future Plans</a><ul>
@@ -126,10 +126,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>JSON to Models</li>
+    <li>Isaac - The name</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="../_sources/pages/02-JSONToModels.txt" rel="nofollow"> View page source</a>
+          <a href="../_sources/pages/10-Name.txt" rel="nofollow"> View page source</a>
         
       </li>
   </ul>
@@ -137,76 +137,12 @@
 </div>
           <div role="main">
             
-  <div class="section" id="json-to-models">
-<h1>JSON to Models<a class="headerlink" href="#json-to-models" title="Permalink to this headline">¶</a></h1>
-<p>Defined in NSObject+IsaacJSONToObject.h</p>
-<div class="section" id="basic-example">
-<h2>Basic Example<a class="headerlink" href="#basic-example" title="Permalink to this headline">¶</a></h2>
-<p>Let&#8217;s say you have some JSON which looks like this:</p>
-<div class="highlight-objective-c"><div class="highlight"><pre><span class="n">JSON</span>
-<span class="p">{</span>
-        <span class="s">&quot;name&quot;</span><span class="o">:</span><span class="s">&quot;Peter&quot;</span><span class="p">,</span>
-        <span class="s">&quot;age&quot;</span><span class="o">:</span> <span class="mi">32</span><span class="p">,</span>
-        <span class="s">&quot;bestFriend&quot;</span><span class="o">:</span> <span class="p">{</span>
-                <span class="s">&quot;name&quot;</span><span class="o">:</span> <span class="s">&quot;Sudeep&quot;</span><span class="p">,</span>
-                <span class="s">&quot;age&quot;</span><span class="o">:</span> <span class="mi">27</span>
-        <span class="p">},</span>
-        <span class="s">&quot;otherFriends&quot;</span><span class="o">:</span> <span class="p">[</span>
-                <span class="p">{</span>
-                        <span class="s">&quot;name&quot;</span><span class="o">:</span> <span class="s">&quot;Mike&quot;</span><span class="p">,</span>
-                        <span class="s">&quot;age&quot;</span><span class="o">:</span> <span class="mi">23</span>
-                <span class="p">}</span>
-        <span class="p">]</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>If you want to convert this to a model, you would just write a model which looks like this:</p>
-<div class="highlight-objective-c"><div class="highlight"><pre>Person.h
-@interface
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSInteger age;
-@property (nonatomic, strong) Person *bestFriend;
-@property (nonatomic, strong) NSArray *otherFriends;
-@end
-
-Person.m
-@implementation
-- (Class)isc_classForObject:(id)object inArrayWithKey:(NSString *)key {
-  return [Person class];
-}
-@end
-</pre></div>
-</div>
-<p>Normally, you don&#8217;t need to include anything in the .m, but arrays are an exception. The library needs to know what sort of models are in the array, so you must implement this method.</p>
-<p>Now, you just need to call:</p>
-<div class="highlight-objective-c"><div class="highlight"><pre><span class="n">Person</span> <span class="o">*</span><span class="n">model</span> <span class="o">=</span> <span class="p">[</span><span class="n">json</span> <span class="n">isc_objectFromJsonWithClass</span><span class="o">:</span><span class="p">[</span><span class="n">Person</span> <span class="n">class</span><span class="p">]];</span>
-</pre></div>
-</div>
-<p>And it will populate the model.</p>
-</div>
-<div class="section" id="other-methods">
-<h2>Other Methods<a class="headerlink" href="#other-methods" title="Permalink to this headline">¶</a></h2>
-<p>There are some other useful methods that you can override.</p>
-<div class="section" id="key-mapping">
-<h3>Key Mapping<a class="headerlink" href="#key-mapping" title="Permalink to this headline">¶</a></h3>
-<p>This method is useful if the JSON has a key like &#8220;id&#8221;. This is an illegal name for a property in Objective-C. You can map any JSON keys though if you don&#8217;t want to have the same property names in your model.</p>
-<div class="highlight-objective-c"><div class="highlight"><pre><span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nf">isc_keyForJsonKey:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">jsonKey</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">([</span><span class="n">jsonKey</span> <span class="n">isEqualToString</span><span class="o">:</span><span class="s">@&quot;id&quot;</span><span class="p">])</span> <span class="p">{</span>
-    <span class="c1">// In our model, we have a property named personID</span>
-    <span class="k">return</span> <span class="s">@&quot;personID&quot;</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="p">[</span><span class="n">super</span> <span class="n">isc_keyForJsonKey</span><span class="o">:</span><span class="n">jsonKey</span><span class="p">];</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="class-mapping">
-<h3>Class Mapping<a class="headerlink" href="#class-mapping" title="Permalink to this headline">¶</a></h3>
-<p>This is pretty rare, so I&#8217;ll let you read the API docs for info on this.</p>
-<div class="highlight-objective-c"><div class="highlight"><pre><span class="k">-</span> <span class="p">(</span><span class="kt">Class</span><span class="p">)</span><span class="nf">isc_classForObjectKey:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">objectKey</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
+  <div class="section" id="isaac-the-name">
+<h1>Isaac - The name<a class="headerlink" href="#isaac-the-name" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="why-did-we-name-this-library-isaac">
+<h2>Why did we name this library Isaac?<a class="headerlink" href="#why-did-we-name-this-library-isaac" title="Permalink to this headline">¶</a></h2>
+<p>Originally, we wanted to name this library Alchemist. Alchemy is the process of turning lead into gold. For this library, we like the idea of turning messy, annoying-to-use NSDictionary objects into clean, golden model objects.</p>
+<p>However, it seemed the name was trademarked, so we needed to be more creative. When searching for famous alchemists, we decided to name the library after Isaac Newton (while not inventing calculus, he gave Alchemy a try). Really, the link to alchemy is pretty weak...so I&#8217;d just think of Isaac as your friendly, intelligent, curly-haired JSON parser.</p>
 </div>
 </div>
 
@@ -216,10 +152,10 @@ Person.m
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="03-ModelsToJSON.html" class="btn btn-neutral float-right" title="Models to JSON">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="11-FuturePlans.html" class="btn btn-neutral float-right" title="Future Plans">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="01-Install.html" class="btn btn-neutral" title="Installation"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="09-FAQ.html" class="btn btn-neutral" title="FAQ"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
