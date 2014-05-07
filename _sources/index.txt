@@ -12,6 +12,8 @@ Welcome to Isaac's documentation!
 
    pages/*
 
+Isaac is an open source project by LinkedIn. You can find the project on github: https://github.com/linkedin/Isaac/
+
 TL;DR
 -----
 
