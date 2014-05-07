@@ -1,6 +1,13 @@
 Installation
 ============
 
+Github
+------
+
+You can find the project on github:
+
+https://github.com/linkedin/Isaac/
+
 Cocoapods
 ---------
 
