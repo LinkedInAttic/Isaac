@@ -5,7 +5,7 @@ You may notice that none of the methods in this library take an NSError pointer 
 
 When writing code, you should not assume that any value is not nil, or that an array is filled unless you have confidence in the structure of the JSON you are passing in.
 
-If you are developing, and cannot work out why a certain class is not being populated correctly, you can turn the library onto verbose mode where it will print out any errors it encounters. To turn on verbose mode add
+If you are developing, and cannot work out why a certain class is not being populated correctly, you can turn on the library's verbose mode and it will print out any errors it encounters. To turn on verbose mode add
 
 ISAAC_VERBOSE=1
 

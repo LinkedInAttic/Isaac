@@ -6,7 +6,12 @@ Defined in NSObject+IsaacObjectToJson.h
 Convert Models Back into JSON
 -----------------------------
 
-This can be used to convert model objects back into JSON. This can be useful when creating POST data. It is the inverse of
+This can be used to convert model objects back into JSON. This can be useful when creating POST data from models. Simply call:
+
+.. code-block:: objective-c
+	- (id)isc_jsonRepresentation;
+
+It is the inverse of:
 
 .. code-block:: objective-c
 

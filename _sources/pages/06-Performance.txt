@@ -9,7 +9,7 @@ We created a sample project to test the performance of this library. In general,
 Production Code
 ---------------
 
-At LinkedIn, we use this for all of our JSON parsing, and I've never seen it come up on any performance testing I've done. Basically, it's so fast compared to everything else that you can ignore it. This takes into account the fact that for our app, we have some relatively large JSON responses. We do all of our parsing on the main thread for simplicity, but you can move it to a background thread if you want.
+At LinkedIn, we use this for all of our JSON parsing, and we've never seen it come up on any performance testing we've done. Basically, it's so fast compared to everything else in an app that you can ignore it. This takes into account the fact that for our app, we have some relatively large JSON responses. We do all of our parsing on the main thread for simplicity, but you can move it to a background thread if you want.
 
 The Numbers
 -----------

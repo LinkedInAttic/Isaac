@@ -41,7 +41,7 @@ So, usually, we represent JSON using models. This means the code above becomes:
 
 	NSString *firstPersonName = model.peopleData.values[0].formattedName;
 
-But then we have to write code code for the models:
+But then we have to write extra code for the models:
 
 Friend.h
 

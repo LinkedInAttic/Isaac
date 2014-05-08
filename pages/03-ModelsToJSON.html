@@ -59,6 +59,7 @@
         
             <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="01-Install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01-Install.html#github">Github</a></li>
 <li class="toctree-l2"><a class="reference internal" href="01-Install.html#cocoapods">Cocoapods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="01-Install.html#source">Source</a></li>
 </ul>
@@ -142,7 +143,8 @@
 <p>Defined in NSObject+IsaacObjectToJson.h</p>
 <div class="section" id="convert-models-back-into-json">
 <h2>Convert Models Back into JSON<a class="headerlink" href="#convert-models-back-into-json" title="Permalink to this headline">¶</a></h2>
-<p>This can be used to convert model objects back into JSON. This can be useful when creating POST data. It is the inverse of</p>
+<p>This can be used to convert model objects back into JSON. This can be useful when creating POST data from models. Simply call:</p>
+<p>It is the inverse of:</p>
 <div class="highlight-objective-c"><div class="highlight"><pre><span class="k">-</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nf">isc_objectFromJsonWithClass:</span><span class="p">(</span><span class="kt">Class</span><span class="p">)</span><span class="nv">aClass</span><span class="p">;</span>
 </pre></div>
 </div>

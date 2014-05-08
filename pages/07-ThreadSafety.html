@@ -140,15 +140,8 @@
             
   <div class="section" id="thread-safety">
 <h1>Thread Safety<a class="headerlink" href="#thread-safety" title="Permalink to this headline">¶</a></h1>
-<p>You can run all of these methods on any thread, but it doesn&#8217;t mean that it is thread safe. In general, you can create models on a different thread if you are afraid of parsing speeds. For instance:</p>
-<div class="highlight-objective-c"><div class="highlight"><pre><span class="c1">// In the network stack on a different thread</span>
-<span class="c1">// No-one else is using this response yet because we haven&#39;t called back to any other thread</span>
-<span class="n">NSDictionary</span> <span class="o">*</span><span class="n">response</span><span class="p">;</span>
-<span class="n">Person</span> <span class="o">*</span><span class="n">model</span> <span class="o">=</span> <span class="p">[</span><span class="n">response</span> <span class="n">isc_objectFromJSONWithClass</span><span class="o">:</span><span class="p">[</span><span class="n">Person</span> <span class="n">class</span><span class="p">]];</span>
-<span class="c1">// Now call back to the main thread and pass back model</span>
-</pre></div>
-</div>
-<p>This code is fine since no-one else is using response or model since they haven&#8217;t been passed to another thread yet.</p>
+<p>You can run all of these methods on any thread, but it doesn&#8217;t mean that it is thread safe. In general, you can create models on a different thread if you are afraid of parsing speeds.</p>
+<p>If you do this, make sure that you don&#8217;t edit the object after you&#8217;ve passed it to another thread. Your models are only as thread safe as you make them.</p>
 </div>
 
 
