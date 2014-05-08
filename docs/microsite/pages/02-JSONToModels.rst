@@ -75,15 +75,3 @@ This method is useful if the JSON has a key like "id". This is an illegal name f
 	  }
 	  return [super isc_keyForJsonKey:jsonKey];
 	}
-	
-=============
-Class Mapping
-=============
-
-This is pretty rare, so I'll let you read the API docs for info on this.
-
-.. code-block:: objective-c
-
-	- (Class)isc_classForObjectKey:(NSString *)objectKey;
-	
-	
