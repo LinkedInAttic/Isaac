@@ -566,6 +566,7 @@
 				);
 				INFOPLIST_FILE = "ParsingPerformance/ParsingPerformance-Info.plist";
 				INSTALL_GROUP = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -587,6 +588,7 @@
 				GCC_PREFIX_HEADER = "ParsingPerformance/ParsingPerformance-Prefix.pch";
 				INFOPLIST_FILE = "ParsingPerformance/ParsingPerformance-Info.plist";
 				INSTALL_GROUP = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

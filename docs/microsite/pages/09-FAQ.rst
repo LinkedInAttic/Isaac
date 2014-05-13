@@ -25,3 +25,7 @@ Override isc_keyForJSONKey: in your model. For instance:
 	  return [super isc_keyForJSONKey:jsonKey];
 	}
 	
+Does this library support iOS 6?
+--------------------------------
+
+Yes. This library does support iOS 6. However, since XCTest is only supported in iOS 7, our unit tests do not cover iOS 6. Instead, we have validated with manual testing.

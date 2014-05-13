@@ -34,7 +34,9 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  self.edgesForExtendedLayout = UIRectEdgeNone;
+  if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+  }
   self.title = @"Performance";
   
   self.numberOfTries = 5;
