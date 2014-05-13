@@ -200,7 +200,7 @@
 // This function puts an NSNumber from the JSON into this object, but only if the
 // object's property is an appropriate type.
 - (void)isc_setNumberValue:(NSNumber *)numberValue forObjectKey:(NSString *)objectKey {
-  const char *typeEncoding = [ISCRuntimeUtilities copyPropertyTypeStringForProperty:objectKey inClass:[self class]];
+  char *typeEncoding = [ISCRuntimeUtilities copyPropertyTypeStringForProperty:objectKey inClass:[self class]];
   
   if (!typeEncoding) {
     // Couldn't get a type. Probably the property doesn't exist.
@@ -245,7 +245,7 @@
       break;
   }
   
-  free((char *)typeEncoding);
+  free(typeEncoding);
 }
 
 #pragma mark - Default Implementations
