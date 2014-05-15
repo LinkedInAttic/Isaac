@@ -27,7 +27,7 @@ It's easy to convert JSON into an NSDictionary. There are plenty of open source 
 .. code-block:: objective-c
 
 	NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-	NSString *firstPersonName = [[[[json objectForKey:@"peopleData"] objectForKey:@"values"] objectAtIndex:0] objectAtIndex:@"formatedName"];
+	NSString *firstPersonName = [[[[json objectForKey:@"peopleData"] objectForKey:@"values"] objectAtIndex:0] objectForKey:@"formatedName"];
 
 This is problematic for a few reasons:
 
