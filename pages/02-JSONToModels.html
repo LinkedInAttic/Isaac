@@ -94,6 +94,7 @@
 <li class="toctree-l2"><a class="reference internal" href="09-FAQ.html#this-library-is-recursive-is-there-any-worry-of-infinite-loops">This library is recursive. Is there any worry of infinite loops?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="09-FAQ.html#my-json-contains-nested-arrays-an-array-with-an-array-inside-does-this-library-support-that">My JSON contains nested arrays (an array with an array inside). Does this library support that?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="09-FAQ.html#i-don-t-want-to-use-the-same-property-names-as-my-json-some-are-even-impossible-id-what-can-i-do">I don&#8217;t want to use the same property names as my JSON. Some are even impossible (id). What can I do?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="09-FAQ.html#does-this-library-support-ios-6">Does this library support iOS 6?</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="10-Name.html">Isaac - The name</a><ul>
@@ -180,7 +181,7 @@ Person.m
 </div>
 <p>Normally, you don&#8217;t need to include anything in the .m, but arrays are an exception. The library needs to know what sort of models are in the array, so you must implement this method.</p>
 <p>Now, you just need to call:</p>
-<div class="highlight-objective-c"><div class="highlight"><pre><span class="n">Person</span> <span class="o">*</span><span class="n">model</span> <span class="o">=</span> <span class="p">[</span><span class="n">json</span> <span class="n">isc_objectFromJsonWithClass</span><span class="o">:</span><span class="p">[</span><span class="n">Person</span> <span class="n">class</span><span class="p">]];</span>
+<div class="highlight-objective-c"><div class="highlight"><pre><span class="n">Person</span> <span class="o">*</span><span class="n">model</span> <span class="o">=</span> <span class="p">[</span><span class="n">json</span> <span class="n">isc_objectFromJSONWithClass</span><span class="o">:</span><span class="p">[</span><span class="n">Person</span> <span class="n">class</span><span class="p">]];</span>
 </pre></div>
 </div>
 <p>And it will populate the model.</p>
@@ -191,12 +192,12 @@ Person.m
 <div class="section" id="key-mapping">
 <h3>Key Mapping<a class="headerlink" href="#key-mapping" title="Permalink to this headline">¶</a></h3>
 <p>This method is useful if the JSON has a key like &#8220;id&#8221;. This is an illegal name for a property in Objective-C. You can map any JSON keys though if you don&#8217;t want to have the same property names in your model.</p>
-<div class="highlight-objective-c"><div class="highlight"><pre><span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nf">isc_keyForJsonKey:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">jsonKey</span> <span class="p">{</span>
+<div class="highlight-objective-c"><div class="highlight"><pre><span class="k">-</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nf">isc_keyForJSONKey:</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">jsonKey</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">([</span><span class="n">jsonKey</span> <span class="n">isEqualToString</span><span class="o">:</span><span class="s">@&quot;id&quot;</span><span class="p">])</span> <span class="p">{</span>
     <span class="c1">// In our model, we have a property named personID</span>
     <span class="k">return</span> <span class="s">@&quot;personID&quot;</span><span class="p">;</span>
   <span class="p">}</span>
-  <span class="k">return</span> <span class="p">[</span><span class="n">super</span> <span class="n">isc_keyForJsonKey</span><span class="o">:</span><span class="n">jsonKey</span><span class="p">];</span>
+  <span class="k">return</span> <span class="p">[</span><span class="n">super</span> <span class="n">isc_keyForJSONKey</span><span class="o">:</span><span class="n">jsonKey</span><span class="p">];</span>
 <span class="p">}</span>
 </pre></div>
 </div>
