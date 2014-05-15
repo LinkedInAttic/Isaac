@@ -51,7 +51,7 @@ Now, you just need to call:
 
 .. code-block:: objective-c
 
-	Person *model = [json isc_objectFromJsonWithClass:[Person class]];
+	Person *model = [json isc_objectFromJSONWithClass:[Person class]];
 	
 And it will populate the model.
 
@@ -68,10 +68,10 @@ This method is useful if the JSON has a key like "id". This is an illegal name f
 
 .. code-block:: objective-c
 
-	- (NSString *)isc_keyForJsonKey:(NSString *)jsonKey {
+	- (NSString *)isc_keyForJSONKey:(NSString *)jsonKey {
 	  if ([jsonKey isEqualToString:@"id"]) {
 	    // In our model, we have a property named personID
 	    return @"personID";
 	  }
-	  return [super isc_keyForJsonKey:jsonKey];
+	  return [super isc_keyForJSONKey:jsonKey];
 	}
