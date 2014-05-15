@@ -13,7 +13,7 @@ Cocoapods
 
 We're on cocoapods, so add this line to your Podfile
 
-pod isaac
+pod Isaac
 
 Source
 ------
