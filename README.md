@@ -14,7 +14,8 @@ The library also has functionality to convert your models back into JSON and dee
 
 ## CocoaPods
 
-pod install isaac
+Add to your Podfile:
+pod Isaac
 
 ## Submodule
 
