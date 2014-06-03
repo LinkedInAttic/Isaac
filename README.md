@@ -1,5 +1,7 @@
 # Abstract
 
+![](https://travis-ci.org/linkedin/Isaac.svg?branch=master)
+
 This library shoves data from JSON dictionaries into models. You write subclasses of NSObject with properties that match the JSON keys. Then call one method and the model will be populated with the JSON data. It is recursive and type-safe.
 
 The best thing is, you don't need to write any code to populate these models. For most of your models, the .m will be empty. You just need to write a .h file which matches your JSON structure, and call one method:
