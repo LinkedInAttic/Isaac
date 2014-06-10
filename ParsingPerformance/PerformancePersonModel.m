@@ -9,7 +9,7 @@
 
 #import "PerformancePersonModel.h"
 #import "PerformanceFriendModel.h"
-#import "NSObject+IssacJSONToObject.h"
+#import "NSObject+IsaacJSONToObject.h"
 
 
 @implementation PerformancePersonModel

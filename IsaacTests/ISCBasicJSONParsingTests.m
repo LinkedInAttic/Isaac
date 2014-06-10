@@ -8,7 +8,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 #import <XCTest/XCTest.h>
-#import "NSObject+IssacJSONToObject.h"
+#import "NSObject+IsaacJSONToObject.h"
 
 
 #pragma mark - Test Person

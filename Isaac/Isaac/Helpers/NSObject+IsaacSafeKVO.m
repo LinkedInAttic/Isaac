@@ -12,7 +12,7 @@
 // Helpers
 #import "ISCLog.h"
 
-@implementation NSObject (IssacSafeKVO)
+@implementation NSObject (IsaacSafeKVO)
 
 - (void)isc_safeSetValue:(id)value forKey:(id)key {
   // The try/catch doesn't seem great here for purity reasons.

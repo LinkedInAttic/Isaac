@@ -11,7 +11,7 @@
 
 #import "NSObject+IsaacObjectToJSON.h"
 #import <UIKit/UIKit.h>
-#import "NSObject+IssacJSONToObject.h"
+#import "NSObject+IsaacJSONToObject.h"
 
 
 @interface ISCJSONSerializationTestPerson : NSObject

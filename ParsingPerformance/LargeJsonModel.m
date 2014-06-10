@@ -8,7 +8,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
 #import "LargeJSONModel.h"
-#import "NSObject+IssacJSONToObject.h"
+#import "NSObject+IsaacJSONToObject.h"
 #import "PerformancePersonModel.h"
 
 

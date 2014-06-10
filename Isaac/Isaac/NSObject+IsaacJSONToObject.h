@@ -26,7 +26,7 @@
  * The value types from JSON will match your model. For example, you have an int property, and the JSON value will be a number.
  * Objects with arrays must implement classForObject:inArrayWithKey:
  
- You can also override methods in NSObject (IssacJSONToObjectModel) to customize model parsing.
+ You can also override methods in NSObject (IsaacJSONToObjectModel) to customize model parsing.
  
  * Override isc_setJSONValue:forJSONKey: to totally take control of a key. Call super's version for keys you don't customize.
  * Override isc_keyForJSONKey: to change the mapping between JSON keys and property names. Call super for keys you don't customize.
@@ -45,7 +45,7 @@
      you will need to override classForObjectKey:.
  */
 
-@interface NSDictionary (IssacJSONToObject)
+@interface NSDictionary (IsaacJSONToObject)
 
 /*!
  Constructs an instance of the given class, and populates it with data from the JSON dictionary (self).
@@ -65,7 +65,7 @@
 /*!
  This category contains the main method you call on a JSON object (not a model object) to create the model object.
  */
-@interface NSObject (IssacJSONToObject)
+@interface NSObject (IsaacJSONToObject)
 
 /*!
  This method only applies when self is a dictionary.
@@ -89,7 +89,7 @@
  This category contains methods you can override in the model object to customize parsing behavior. 
  You need to override \c isc_classForObject:inArrayWithKey: if you have custom objects in an array property.
  */
-@interface NSObject (IssacJSONToObjectModel)
+@interface NSObject (IsaacJSONToObjectModel)
 
 /*!
  Set a key,value pair into the model object.

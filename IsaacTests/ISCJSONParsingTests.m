@@ -9,7 +9,7 @@
 
 #import <XCTest/XCTest.h>
 
-#import "NSObject+IssacJSONToObject.h"
+#import "NSObject+IsaacJSONToObject.h"
 
 #define TEST_PERSON_NAME @"Mike"
 #define TEST_PERSON_INT_AGE 31

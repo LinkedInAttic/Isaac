@@ -10,7 +10,7 @@
 #import "MainViewController.h"
 
 // JSON Parsing
-#import "NSObject+IssacJSONToObject.h"
+#import "NSObject+IsaacJSONToObject.h"
 // Models
 #import "LargeJSONModel.h"
 #import "PerformanceFriendModel.h"

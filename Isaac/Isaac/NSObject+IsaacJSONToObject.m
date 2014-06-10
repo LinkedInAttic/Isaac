@@ -7,7 +7,7 @@
 // distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 
-#import "NSObject+IssacJSONToObject.h"
+#import "NSObject+IsaacJSONToObject.h"
 // Runtime
 #import <objc/runtime.h>
 // Helpers
@@ -15,7 +15,7 @@
 #import "NSObject+IsaacSafeKVO.h"
 #import "ISCLog.h"
 
-@implementation NSDictionary (IssacJSONToObject)
+@implementation NSDictionary (IsaacJSONToObject)
 
 - (id)isc_objectFromJSONWithClass:(Class)aClass {
   // If there's no class to create, just return the same object (it's the best we can do).
@@ -50,7 +50,7 @@
 
 @end
 
-@implementation NSObject (IssacJSONToObjectModel)
+@implementation NSObject (IsaacJSONToObjectModel)
 
 // This is only here because the compiler was complaining at me. This method should only be called on NSDictionarys.
 - (id)isc_objectFromJSONWithClass:(Class)aClass {
@@ -104,7 +104,7 @@
     object = [(NSDictionary *)jsonValue isc_objectFromJSONWithClass:objectClass];
   }
   else {
-    ISCLog(@"NSObject+IssacJSONToObjectModel warning: Property %@ didn't match dictionary type.", objectKey);
+    ISCLog(@"NSObject+IsaacJSONToObjectModel warning: Property %@ didn't match dictionary type.", objectKey);
   }
   
   if (object) {
@@ -190,7 +190,7 @@
       break;
     default:
       // It's not a recognized mapping. Fail silently.
-      ISCLog(@"NSObject+IssacJSONToObjectModel warning: Cannot map string for key %@ with encoding %s", objectKey, typeEncoding);
+      ISCLog(@"NSObject+IsaacJSONToObjectModel warning: Cannot map string for key %@ with encoding %s", objectKey, typeEncoding);
       break;
   }
   
@@ -241,7 +241,7 @@
       
     default:
       // It's not a recognized mapping. Fail silently.
-      ISCLog(@"NSObject+IssacJSONToObjectModel warning: Cannot map number for key %@ with encoding %s", objectKey, typeEncoding);
+      ISCLog(@"NSObject+IsaacJSONToObjectModel warning: Cannot map number for key %@ with encoding %s", objectKey, typeEncoding);
       break;
   }
   

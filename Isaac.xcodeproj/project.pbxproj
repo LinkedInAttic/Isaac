@@ -130,7 +130,7 @@
 		61F24B9B191A9B21009F51FA /* NSObject+IsaacSafeKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+IsaacSafeKVO.m"; sourceTree = "<group>"; };
 		61F24B9C191A9B21009F51FA /* NSObject+IsaacCopyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+IsaacCopyModel.h"; sourceTree = "<group>"; };
 		61F24B9D191A9B21009F51FA /* NSObject+IsaacCopyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+IsaacCopyModel.m"; sourceTree = "<group>"; };
-		61F24B9E191A9B21009F51FA /* NSObject+IssacJSONToObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+IssacJSONToObject.h"; sourceTree = "<group>"; };
+		61F24B9E191A9B21009F51FA /* NSObject+IsaacJSONToObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+IsaacJSONToObject.h"; sourceTree = "<group>"; };
 		61F24B9F191A9B21009F51FA /* NSObject+IsaacJSONToObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+IsaacJSONToObject.m"; sourceTree = "<group>"; };
 		61F24BA0191A9B21009F51FA /* NSObject+IsaacObjectToJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+IsaacObjectToJSON.h"; sourceTree = "<group>"; };
 		61F24BA1191A9B21009F51FA /* NSObject+IsaacObjectToJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+IsaacObjectToJSON.m"; sourceTree = "<group>"; };
@@ -279,7 +279,7 @@
 		61F24B97191A9B21009F51FA /* Isaac */ = {
 			isa = PBXGroup;
 			children = (
-				61F24B9E191A9B21009F51FA /* NSObject+IssacJSONToObject.h */,
+				61F24B9E191A9B21009F51FA /* NSObject+IsaacJSONToObject.h */,
 				61F24B9F191A9B21009F51FA /* NSObject+IsaacJSONToObject.m */,
 				61F24B9C191A9B21009F51FA /* NSObject+IsaacCopyModel.h */,
 				61F24B9D191A9B21009F51FA /* NSObject+IsaacCopyModel.m */,
