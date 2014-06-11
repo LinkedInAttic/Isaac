@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
   s.authors      = "Peter Livesey", "Sudeep Yegnashankaran"
   s.platform     = :ios, "6.0"
-  s.source       = { :git => "http://www.github.com/linkedin/isaac.git", :tag => "1.1.0" }
+  s.source       = { :git => "https://github.com/linkedin/isaac.git", :tag => "1.1.0" }
   s.source_files  = "Isaac/**/*.{h,m}"
   s.framework  = "Foundation"
   s.requires_arc = true
