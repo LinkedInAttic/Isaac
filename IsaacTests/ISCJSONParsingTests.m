@@ -16,6 +16,7 @@
 #define TEST_PERSON_INTEGER_AGE 41
 #define TEST_PERSON_IS_COOL YES
 #define TEST_PERSON_FAVORITE_COLOR_ARRAY @[@"red", @"blue"]
+#define TEST_PERSON_META_DATA @[@{@"meta": @"So meta"}, @{}]
 
 #define TEST_FATHER_NAME @"Dave"
 #define TEST_FATHER_INT_AGE 51
@@ -39,6 +40,7 @@
 @property (nonatomic, strong) NSArray *favoriteColors;
 @property (nonatomic, strong) ISCJSONTestPerson *father;
 @property (nonatomic, strong) NSArray *siblings;
+@property (nonatomic, strong) NSArray *metaData;
 
 @end
 
@@ -65,6 +67,11 @@
 - (Class)isc_classForObject:(id)object inArrayWithKey:(NSString *)key {
   if ([key isEqualToString:@"siblings"]) {
     return [ISCJSONTestPerson class];
+  }
+  
+  if ([key isEqualToString:@"metaData"]) {
+    // We don't want to parse these. We just want to keep the NSDictionary as is.
+    return [NSDictionary class];
   }
   
   return [super isc_classForObject:object inArrayWithKey:key];
@@ -171,6 +178,26 @@
   XCTAssertTrue(person.favoriteColors == nil, @"Color array doesn't match.");
 }
 
+/*
+ This test makes sure that if you don't specify a class in an array is just puts the dictionary in as is.
+ */
+- (void)testDictionariesInArrays {
+  NSDictionary *personJSON = [self createTestPersonJSON];
+  ISCJSONTestPerson *person = [personJSON isc_objectFromJSONWithClass:[ISCJSONTestPerson class]];
+  
+  XCTAssertEqual([person.metaData count], 2, @"There should be two objects in this array");
+  XCTAssertTrue([person.metaData[0] isKindOfClass:[NSDictionary class]], @"The first object should be a dictionary");
+  XCTAssertTrue([person.metaData[1] isKindOfClass:[NSDictionary class]], @"The second object should be a dictionary");
+  
+  // Macros suck with modern objective-c...
+  id firstObjectValue = person.metaData[0][@"meta"];
+  id expectedObjectValue = TEST_PERSON_META_DATA[0][@"meta"];
+  XCTAssertEqualObjects(firstObjectValue, expectedObjectValue, @"The first object should have the right keys in it");
+  
+  NSArray *secondObjectKeys = [person.metaData[1] allKeys];
+  XCTAssertEqual([secondObjectKeys count], 0, @"The second object should have no keys in it");
+}
+
 #pragma mark - Helpers
 
 - (NSMutableDictionary *)createTestPersonJSON {
@@ -181,7 +208,8 @@
             @"isCool": @(TEST_PERSON_IS_COOL),
             @"favoriteColors": [TEST_PERSON_FAVORITE_COLOR_ARRAY mutableCopy],
             @"father": [self createTestFatherJSON],
-            @"siblings": [@[[self createTestSiblingJSON] ] mutableCopy]
+            @"siblings": [@[[self createTestSiblingJSON] ] mutableCopy],
+            @"metaData": [TEST_PERSON_META_DATA mutableCopy]
             } mutableCopy];
 }
 

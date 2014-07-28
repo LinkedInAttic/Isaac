@@ -29,3 +29,29 @@ Does this library support iOS 6?
 --------------------------------
 
 Yes. This library does support iOS 6. However, since XCTest is only supported in iOS 7, our unit tests do not cover iOS 6. Instead, we have validated with manual testing.
+
+For some parts of my JSON, I don't want it to parse into models. Instead, I just want it to keep the dictionary as is. Does this library support this?
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Yes. If you don't want to parse to a model, just specify the class to be NSDictionary. For instance:
+
+.. code-block:: objective-c
+
+	@interface ExampleModel: NSObject
+	
+	@property (nonatomic, strong) NSDictionary *data;
+	
+	@end
+
+.. code-block:: json
+
+	{
+		"data": { ... }
+	}
+	
+If you pass in this JSON and parse it into an Example model, then the contents of the data property will be an NSDictionary copied from the dictionary in the JSON. You can also do this in arrays by returning NSDictionary as the class in the array.
+
+Some of my models are subclasses of NSString and other foundation objects and I'm having problems. What's going on?
+-------------------------------------------------------------------------------------------------------------------
+
+Don't do this. A lot of the logic in the library depends on checking if you're a subclass of these classes and should be reserved for the JSON. If this is blocking you, file an issue on the GitHub, but currently, I can't think of a use case for this. Most models should just subclass NSObject or other models directly.

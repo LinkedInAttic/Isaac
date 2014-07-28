@@ -25,6 +25,7 @@
  * The JSON keys match the property names exactly (read below if you don't want a direct mapping)
  * The value types from JSON will match your model. For example, you have an int property, and the JSON value will be a number.
  * Objects with arrays must implement classForObject:inArrayWithKey:
+ * It should not be a subclass of NSString, NSArray, NSDictionary or NSNumber. I can't see a good reason for this, and doing so is untested and will potentially cause problems.
  
  You can also override methods in NSObject (IsaacJSONToObjectModel) to customize model parsing.
  

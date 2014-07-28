@@ -24,6 +24,12 @@
     return self;
   }
   
+  // If we're trying to parse into an NSDictionary, let's not parse it the normal Isaac way
+  // Instead, let's leave the JSON 'as is'
+  if ([aClass isSubclassOfClass:[NSDictionary class]]) {
+    return [aClass dictionaryWithDictionary:self];
+  }
+  
   NSObject *model = [aClass new];
   NSAssert([model isKindOfClass:[NSObject class]], [NSString stringWithFormat:@""]);
   
@@ -91,17 +97,15 @@
   // By default, the object to set will be a dictionary.
   id object = nil;
   
-  // Ensure type safety. If the model object is a dictionary, just set it directly.
-  // Otherwise, if the model object is a custom object, parse it.
+  // Ensure type safety.
+  // If objectClass is an NSDictionary then this objectFromJSONWithClass method will handle it accordingly
+  // If the model object is a custom object, parse it.
   // If neither is true, don't set the object.
-  if ([objectClass isSubclassOfClass:[NSDictionary class]]) {
-    object = jsonValue;
-  }
-  else if (objectClass &&
-           ![objectClass isSubclassOfClass:[NSString class]] &&
-           ![objectClass isSubclassOfClass:[NSArray class]] &&
-           ![objectClass isSubclassOfClass:[NSNumber class]]) {
-    object = [(NSDictionary *)jsonValue isc_objectFromJSONWithClass:objectClass];
+  if (objectClass &&
+      ![objectClass isSubclassOfClass:[NSString class]] &&
+      ![objectClass isSubclassOfClass:[NSArray class]] &&
+      ![objectClass isSubclassOfClass:[NSNumber class]]) {
+    object = [jsonValue isc_objectFromJSONWithClass:objectClass];
   }
   else {
     ISCLog(@"NSObject+IsaacJSONToObjectModel warning: Property %@ didn't match dictionary type.", objectKey);
@@ -139,7 +143,7 @@
       }
       else if ([arrayElement isKindOfClass:[NSDictionary class]]) {
         if (objectClass) {
-          value = [(NSDictionary *)arrayElement isc_objectFromJSONWithClass:objectClass];
+          value = [arrayElement isc_objectFromJSONWithClass:objectClass];
         }
         else {
           ISCLog(@"isc_setArrayJSONValue:forObjectKey: warning: element %@ was ignored because it does not have a valid model class.", arrayElement);
