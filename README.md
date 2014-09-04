@@ -36,3 +36,7 @@ http://linkedin.github.io/Isaac/
 For documentation on each method in the library and the parameters it takes, see our API documentation:
 
 http://linkedin.github.io/Isaac/api-docs/
+
+# Swift Support
+
+In the 1.3.0 release, we've added some Swift support for JSON to model parsing. See NSObject+IsaacJSONToObject.h for the docs.
