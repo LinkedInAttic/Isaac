@@ -71,7 +71,16 @@
         stringLength -= 2;
         // This will shorten the string by one character (we want to remove the " at the end of the string)
         classString[stringLength-1] = '\0';
-        class = objc_getClass(classString);
+        
+        // Swift support
+        // In Swift, the classes are prefixed by their package name
+        // Let's first try to find the class in the current package, and if that fails, we'll look everywhere else
+        class = [self swiftClassFromClassName:classString namespaceClass:parentClass];
+        
+        if (!class) {
+          // If it wasn't a swift class, or if we couldn't find it, let's default to our normal behavior
+          class = objc_getClass(classString);
+        }
       }
     }
   }
@@ -79,6 +88,49 @@
   free(propertyType);
   
   return class;
+}
+
+/*!
+ This function tries to find a swift class by name. To do this, it needs to know the namespace. 
+ To get the namespace, you pass in a class that's in that namespace.
+ */
++ (Class)swiftClassFromClassName:(char *)className namespaceClass:(Class)namespaceClass {
+  // Let's see if the namespace class is a swift class
+  // If so, we'll use this namespace
+  // We will search for a . in the class name. If it has one, it's a swift class
+  const char *namespaceClassName = class_getName(namespaceClass);
+  int dotIndex = -1;
+  unsigned long namespaceNameLength = strlen(namespaceClassName);
+  for (int i = 0; i<namespaceNameLength; i++) {
+    if (namespaceClassName[i] == '.') {
+      dotIndex = i;
+      break;
+    }
+  }
+  
+  if (dotIndex == -1) {
+    // This is not a swift class
+    return nil;
+  } else {
+    // Needs to be the enough to fit everything before the dot, the dot and the new new class name, and a null character
+    long classNameLength = strlen(className);
+    char *newClassString = malloc(sizeof(char) * (dotIndex + 1 + classNameLength + 1));
+    
+    Class returnClass = nil;
+    if (newClassString) {
+      // First, copy across the namespace
+      strncpy(newClassString, namespaceClassName, dotIndex + 1);
+      // Next, let's copy across the class name
+      strncpy(newClassString + dotIndex + 1, className, classNameLength);
+      // Let's set the null character at the end
+      newClassString[dotIndex + 1 + classNameLength] = '\0';
+      
+      returnClass = objc_getClass(newClassString);
+      free(newClassString);
+    }
+    
+    return returnClass;
+  }
 }
 
 + (char *)copyPropertyTypeStringForProperty:(NSString *)propertyName inClass:(Class)aClass {

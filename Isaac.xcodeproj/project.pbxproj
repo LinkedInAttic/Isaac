@@ -40,6 +40,13 @@
 		617FD61718C1429200FDD5CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 617FD60718C1429200FDD5CE /* Foundation.framework */; };
 		617FD61918C1429200FDD5CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 617FD61818C1429200FDD5CE /* UIKit.framework */; };
 		617FD61C18C1429200FDD5CE /* libIsaac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 617FD60418C1429200FDD5CE /* libIsaac.a */; };
+		61C5AEDB19B68E8E0093FFEF /* JSONParsingSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C5AEDA19B68E8E0093FFEF /* JSONParsingSwiftTests.swift */; };
+		61C5AEE019B76D490093FFEF /* NSDictionary+JSONToObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C5AEDE19B767750093FFEF /* NSDictionary+JSONToObject.swift */; };
+		61C5AEE119B76D490093FFEF /* NSDictionary+JSONToObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C5AEDE19B767750093FFEF /* NSDictionary+JSONToObject.swift */; };
+		61C5AEE319B76D800093FFEF /* SwiftSyntaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C5AEE219B76D800093FFEF /* SwiftSyntaxTests.swift */; };
+		61C5AEE619B8CBA80093FFEF /* JSONPersonHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C5AEE519B8CBA80093FFEF /* JSONPersonHelpers.m */; };
+		61C5AEEA19B8CC320093FFEF /* ISCJSONTestPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C5AEE919B8CC320093FFEF /* ISCJSONTestPerson.m */; };
+		61C5AEEC19B8CD460093FFEF /* SwiftPersonHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C5AEEB19B8CD460093FFEF /* SwiftPersonHelpers.swift */; };
 		61DBBE5618ECCB7400A63F5A /* LargeDeepJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 61DBBE5518ECCB7400A63F5A /* LargeDeepJSON.json */; };
 		61DBBE5918ECD4B900A63F5A /* SmallVeryDeepJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 61DBBE5818ECD4B900A63F5A /* SmallVeryDeepJSON.json */; };
 		61DBBE5C18ECD9A500A63F5A /* PerformanceFriendRecursiveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DBBE5B18ECD9A500A63F5A /* PerformanceFriendRecursiveModel.m */; };
@@ -120,6 +127,16 @@
 		617FD61418C1429200FDD5CE /* IsaacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IsaacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		617FD61518C1429200FDD5CE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		617FD61818C1429200FDD5CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		61C5AED919B68E8D0093FFEF /* IsaacTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IsaacTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		61C5AEDA19B68E8E0093FFEF /* JSONParsingSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParsingSwiftTests.swift; sourceTree = "<group>"; };
+		61C5AEDD19B767740093FFEF /* Isaac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Isaac-Bridging-Header.h"; sourceTree = "<group>"; };
+		61C5AEDE19B767750093FFEF /* NSDictionary+JSONToObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDictionary+JSONToObject.swift"; sourceTree = "<group>"; };
+		61C5AEE219B76D800093FFEF /* SwiftSyntaxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSyntaxTests.swift; sourceTree = "<group>"; };
+		61C5AEE519B8CBA80093FFEF /* JSONPersonHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONPersonHelpers.m; sourceTree = "<group>"; };
+		61C5AEE719B8CBB10093FFEF /* JSONPersonHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONPersonHelpers.h; sourceTree = "<group>"; };
+		61C5AEE819B8CC320093FFEF /* ISCJSONTestPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISCJSONTestPerson.h; sourceTree = "<group>"; };
+		61C5AEE919B8CC320093FFEF /* ISCJSONTestPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISCJSONTestPerson.m; sourceTree = "<group>"; };
+		61C5AEEB19B8CD460093FFEF /* SwiftPersonHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPersonHelpers.swift; sourceTree = "<group>"; };
 		61DBBE5518ECCB7400A63F5A /* LargeDeepJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LargeDeepJSON.json; sourceTree = "<group>"; };
 		61DBBE5818ECD4B900A63F5A /* SmallVeryDeepJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SmallVeryDeepJSON.json; sourceTree = "<group>"; };
 		61DBBE5A18ECD9A500A63F5A /* PerformanceFriendRecursiveModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PerformanceFriendRecursiveModel.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -256,6 +273,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		61C5AEDC19B7673E0093FFEF /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				61C5AEDE19B767750093FFEF /* NSDictionary+JSONToObject.swift */,
+				61C5AEDD19B767740093FFEF /* Isaac-Bridging-Header.h */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		61C5AEE419B8CB730093FFEF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				61C5AEE819B8CC320093FFEF /* ISCJSONTestPerson.h */,
+				61C5AEE919B8CC320093FFEF /* ISCJSONTestPerson.m */,
+				61C5AEE719B8CBB10093FFEF /* JSONPersonHelpers.h */,
+				61C5AEE519B8CBA80093FFEF /* JSONPersonHelpers.m */,
+				61C5AEEB19B8CD460093FFEF /* SwiftPersonHelpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		61DBBE5718ECCB7600A63F5A /* Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				61F24B97191A9B21009F51FA /* Isaac */,
+				61C5AEDC19B7673E0093FFEF /* Swift */,
 				61F24BA2191A9B21009F51FA /* RuntimeUtils */,
 			);
 			path = Isaac;
@@ -314,6 +353,9 @@
 		61F24BAD191AB044009F51FA /* IsaacTests */ = {
 			isa = PBXGroup;
 			children = (
+				61C5AEE419B8CB730093FFEF /* Helpers */,
+				61C5AEDA19B68E8E0093FFEF /* JSONParsingSwiftTests.swift */,
+				61C5AEE219B76D800093FFEF /* SwiftSyntaxTests.swift */,
 				61F24BB1191AB044009F51FA /* ISCBasicJSONParsingTests.m */,
 				61F24BB2191AB044009F51FA /* ISCDeepCopyModelTests.m */,
 				61F24BB3191AB044009F51FA /* ISCJSONParsingTests.m */,
@@ -321,6 +363,7 @@
 				61F24BB5191AB044009F51FA /* ISCRuntimePropertyQueryTests.m */,
 				61F24BB6191AB044009F51FA /* ISCRuntimeUtilitiesTests.m */,
 				61F24BBF191AB08A009F51FA /* Resources */,
+				61C5AED919B68E8D0093FFEF /* IsaacTests-Bridging-Header.h */,
 			);
 			path = IsaacTests;
 			sourceTree = "<group>";
@@ -471,6 +514,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61C5AEE119B76D490093FFEF /* NSDictionary+JSONToObject.swift in Sources */,
 				61DBBE5C18ECD9A500A63F5A /* PerformanceFriendRecursiveModel.m in Sources */,
 				6130A6EA18EA098800F67CD8 /* PerformanceFriendModel.m in Sources */,
 				6130A6BF18EA078000F67CD8 /* AppDelegate.m in Sources */,
@@ -498,11 +542,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61C5AEE019B76D490093FFEF /* NSDictionary+JSONToObject.swift in Sources */,
 				61F24BBD191AB044009F51FA /* ISCRuntimePropertyQueryTests.m in Sources */,
+				61C5AEEC19B8CD460093FFEF /* SwiftPersonHelpers.swift in Sources */,
+				61C5AEEA19B8CC320093FFEF /* ISCJSONTestPerson.m in Sources */,
 				61F24BBB191AB044009F51FA /* ISCJSONParsingTests.m in Sources */,
 				61F24BBE191AB044009F51FA /* ISCRuntimeUtilitiesTests.m in Sources */,
 				61F24BB9191AB044009F51FA /* ISCBasicJSONParsingTests.m in Sources */,
+				61C5AEDB19B68E8E0093FFEF /* JSONParsingSwiftTests.swift in Sources */,
+				61C5AEE619B8CBA80093FFEF /* JSONPersonHelpers.m in Sources */,
 				61F24BBC191AB044009F51FA /* ISCJSONSerializationTests.m in Sources */,
+				61C5AEE319B76D800093FFEF /* SwiftSyntaxTests.swift in Sources */,
 				61F24BBA191AB044009F51FA /* ISCDeepCopyModelTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -684,22 +734,29 @@
 		617FD62818C1429200FDD5CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DSTROOT = /tmp/Isaac.dst;
 				INSTALL_GROUP = "";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Isaac/Swift/Isaac-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		617FD62918C1429200FDD5CE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DSTROOT = /tmp/Isaac.dst;
 				INSTALL_GROUP = "";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Isaac/Swift/Isaac-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -708,6 +765,7 @@
 			buildSettings = {
 				ALTERNATE_GROUP = "";
 				BUNDLE_LOADER = "";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -720,6 +778,7 @@
 				);
 				INFOPLIST_FILE = "IsaacTests/Resources/IsaacTests-Info.plist";
 				INSTALL_GROUP = "";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -727,6 +786,8 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "IsaacTests/IsaacTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -737,6 +798,7 @@
 			buildSettings = {
 				ALTERNATE_GROUP = "";
 				BUNDLE_LOADER = "";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -745,6 +807,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "IsaacTests/Resources/IsaacTests-Info.plist";
 				INSTALL_GROUP = "";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -752,6 +815,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "IsaacTests/IsaacTests-Bridging-Header.h";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};

@@ -31,7 +31,7 @@
   }
   
   NSObject *model = [aClass new];
-  NSAssert([model isKindOfClass:[NSObject class]], [NSString stringWithFormat:@""]);
+  NSAssert([model isKindOfClass:[NSObject class]], [NSString stringWithFormat:@"All models used with Isaac must be subclasses of NSObject. See the docs for more details."]);
   
   [self isc_populateJSONIntoModel:model];
   

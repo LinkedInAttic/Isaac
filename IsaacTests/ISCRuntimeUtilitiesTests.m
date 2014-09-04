@@ -44,11 +44,13 @@
   free((char *)type);
   
   type = [ISCRuntimeUtilities copyPropertyTypeStringForProperty:@"integerAge" inClass:[ISCRuntimeTestPerson class]];
-  XCTAssertTrue(strcmp(type, "i") == 0, @"Type doesn't match.");
+  // Could be different things at runtime depending on architecture
+  XCTAssertTrue(strcmp(type, "i") == 0 || strcmp(type, "q") == 0, @"Type doesn't match.");
   free((char *)type);
   
+  // Type is either a c (char) or B (bool) depending on archetecture
   type = [ISCRuntimeUtilities copyPropertyTypeStringForProperty:@"isCool" inClass:[ISCRuntimeTestPerson class]];
-  XCTAssertTrue(strcmp(type, "c") == 0, @"Type doesn't match.");
+  XCTAssertTrue(strcmp(type, "c") == 0 || strcmp(type, "B") == 0, @"Type doesn't match.");
   free((char *)type);
   
   type = [ISCRuntimeUtilities copyPropertyTypeStringForProperty:@"favoriteColors" inClass:[ISCRuntimeTestPerson class]];
@@ -99,8 +101,10 @@
   
   XCTAssertTrue([types[[properties indexOfObject:@"name"]] isEqualToString:@"@\"NSString\""], @"Wrong type.");
   XCTAssertTrue([types[[properties indexOfObject:@"intAge"]] isEqualToString:@"i"], @"Wrong type.");
-  XCTAssertTrue([types[[properties indexOfObject:@"integerAge"]] isEqualToString:@"i"], @"Wrong type.");
-  XCTAssertTrue([types[[properties indexOfObject:@"isCool"]] isEqualToString:@"c"], @"Wrong type.");
+  // Could be different things depending on architecture
+  XCTAssertTrue([types[[properties indexOfObject:@"integerAge"]] isEqualToString:@"i"] || [types[[properties indexOfObject:@"integerAge"]] isEqualToString:@"q"], @"Wrong type.");
+  // Type is either a c (char) or B (bool) depending on archetecture
+  XCTAssertTrue([types[[properties indexOfObject:@"isCool"]] isEqualToString:@"c"] || [types[[properties indexOfObject:@"isCool"]] isEqualToString:@"B"], @"Wrong type.");
   XCTAssertTrue([types[[properties indexOfObject:@"favoriteColors"]] isEqualToString:@"@\"NSArray\""], @"Wrong type.");
   XCTAssertTrue([types[[properties indexOfObject:@"father"]] isEqualToString:@"@\"ISCRuntimeTestPerson\""], @"Wrong type.");
 }

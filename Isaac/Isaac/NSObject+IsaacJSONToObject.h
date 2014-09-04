@@ -44,6 +44,20 @@
  * Your models cannot have nested arrays. classForObject:inArrayWithKey: must return a custom type or nil.
  * If you declare a property as a superclass of what you actually want it to be (like id instead of a custom class)
      you will need to override classForObjectKey:.
+ 
+ Swift Support
+ 
+ This file has limited support for swift. It will only work on NSObjects, but you can specify the objects in swift. In order to specify objects in Swift:
+ 
+ * You must subclass NSObject
+ * All strings must be declared as NSString
+ * All arrays must be declared as NSArray
+ * All objects must either be an optional or have a default value
+ * All primitives (Int, Double, etc) must be declared with a default value (0 suggested). It will not work with optionals.
+ * All classes that are recusively used are in the same module, or the default module (usually, this will just be your app)
+ * All variables must be var (not let)
+ 
+ Also, you should check out the swift file: NSDictionary+JSONToObject.swift for a helpful swift method for parsing. However, cocoapods currently doesn't support importing this file, so you'll need to copy the code over to your project.
  */
 
 @interface NSDictionary (IsaacJSONToObject)

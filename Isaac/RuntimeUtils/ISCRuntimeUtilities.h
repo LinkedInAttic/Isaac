@@ -22,6 +22,10 @@
 
 /*!
  For a parent class and the name of a property, get a class object for the property's type.
+ 
+ Swift Support
+ This method will attempt to be compatible with swift. It will first search in the same module that the parent class is in, and then check the main module (where objective-c classes live).
+ 
  \param propertyName Required. The name of the property.
  \param aClass Required. The class in which the property is defined.
  \returns The class for the property, or nil if the property doesn't exist, or is a primitive.
